@@ -12,11 +12,11 @@ RUN dnf install -y \
     && flatpak remote-add --if-not-exists \
         flathub https://dl.flathub.org/repo/flathub.flatpakrepo \
     && flatpak install --assumeyes \
-        flathub ... \
+        flathub org.wesnoth.Wesnoth \
     && git config -f /etc/rdesktop/rdesktop.ini \
-	rdesktop.title "Personal ..." \
+	rdesktop.title "Personal Battle for Wesnoth" \
     && git config -f /etc/rdesktop/rdesktop.ini \
-	rdesktop.exec "flatpak run ..."
+	rdesktop.exec "flatpak run org.wesnoth.Wesnoth"
 
 # ensure to become root for systemd
 #ENTRYPOINT ["/sbin/init"]
